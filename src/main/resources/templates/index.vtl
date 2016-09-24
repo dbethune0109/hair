@@ -1,0 +1,27 @@
+<div class ="container">
+  <div class ="jumbotron">
+    <h1>Hair Salon</h1>
+  </div>
+</div>
+
+<form action="/" method="post">
+  <div class="form-group">
+    <label for="stylistName">Enter a Stylist Name</label>
+    <input id="stylistName" name="stylistName" type="text" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-success" id= "submitStylist">Submit Stylist Name</button>
+</form>
+
+  <h4>Current list of Stylists<h4>
+
+  <br>
+  <ul>
+    #foreach($stylist in $stylists)
+      <li><a href="/stylist/$stylist.getId()">$stylist.getName()</a></li>
+    #end
+  </ul>
+  <ul>
+    #foreach($client in $clients)
+      <li><a href="/client/$client.getId()">$client.getName()</a></li>
+    #end
+  </ul>
